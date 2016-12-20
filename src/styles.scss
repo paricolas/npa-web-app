@@ -1,0 +1,207 @@
+@import './stylesVar.scss';
+
+/* You can add global styles to this file, and also import other style files */
+@media(min-width: 321px){
+html, body  {
+    display: flex;
+    margin:0;
+    font-family: $default-font-family;
+    background: repeating-linear-gradient(75deg,darkgrey, white 0.1em,lightgrey 0.2em);
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: -5;
+    -webkit-overflow-scrolling: touch;
+}
+app-root{
+    display: flex;
+    justify-content: flex-start;
+    overflow: auto;
+    flex-direction: column;
+    height: 100%;
+    
+}
+ app-main{
+    
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    
+}
+
+app-people-list{
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.back {
+    display: flex;
+    :hover{
+        background: $default-background;
+        color:$default-font-color
+    }
+}
+
+.back button {
+background: transparent;
+font-size:small;
+border : white solid 1px;
+color: white;
+padding:0.5em;
+
+}
+
+.save button {
+background: $default-background;
+font-size:small;
+border : $validation-color solid 1px;
+color: $validation-color;
+padding:0.5em;
+margin-left:0.1em;
+border-radius: 2em;
+}
+.save {
+    
+    display: flex;
+    :hover{
+        background: linear-gradient(145deg,black, $validation-color, lightgrey);
+        color: white;
+    }
+}
+.cancel button {
+background: $default-background;
+font-size:small;
+border : $cancelation-color solid 1px;
+color: $cancelation-color;
+padding:0.5em;
+margin-left:0.1em;
+border-radius: 2em;
+}
+.cancel {
+    display: flex;
+    :hover{
+        background: linear-gradient(145deg,black, $cancelation-color, lightgrey);
+        color: white;
+    }
+}
+
+.alert-danger{
+    background: white;
+    font-size:small;
+    border : $cancelation-color solid 1px;
+    color: $cancelation-color;
+    padding:0.5em;
+    margin-left:0.1em;
+    border-radius: 1em;
+ 
+}
+}
+
+@media(max-width: 320px){
+html, body  {
+    display: flex;
+    margin:0;
+    font-family: $default-font-family;
+    background: repeating-linear-gradient(75deg,darkgrey, white 0.1em,lightgrey 0.2em);
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: -50;
+    width: 100%;
+}
+app-root{
+    display: flex;
+    justify-content: flex-start;
+    overflow: auto;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+ app-main{
+    
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+app-people-list{
+    
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.back {
+    display: flex;
+    :hover{
+        background: $default-background;
+        color:$default-font-color
+    }
+}
+
+.back button {
+background: transparent;
+font-size:small;
+border : white solid 1px;
+color: white;
+padding:0.5em;
+
+}
+
+.save button {
+background: $default-background;
+font-size:small;
+border : $validation-color solid 1px;
+color: $validation-color;
+padding:0.5em;
+margin-left:0.1em;
+border-radius: 2em;
+}
+.save {
+    
+    display: flex;
+    :hover{
+        background: linear-gradient(145deg,black, $validation-color, lightgrey);
+        color: white;
+    }
+}
+.cancel button {
+background: $default-background;
+font-size:small;
+border : $cancelation-color solid 1px;
+color: $cancelation-color;
+padding:0.5em;
+margin-left:0.1em;
+border-radius: 2em;
+}
+.cancel {
+    display: flex;
+    :hover{
+        background: linear-gradient(145deg,black, $cancelation-color, lightgrey);
+        color: white;
+    }
+}
+
+.alert-danger{
+    background: white;
+    font-size:small;
+    border : $cancelation-color solid 1px;
+    color: $cancelation-color;
+    padding:0.5em;
+    margin-left:0.1em;
+    border-radius: 1em;
+ 
+}
+}
+

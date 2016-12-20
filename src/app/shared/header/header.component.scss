@@ -1,0 +1,14 @@
+@import '../../../stylesVar.scss';
+
+.header-main{
+    background: linear-gradient(145deg, darkred,grey, black);
+    color: grey;
+    padding:0.5em;
+    justify-content: space-between;
+    box-shadow: $default-box-shadow;
+    display: flex;
+    z-index: 10;
+    position: relative;
+    
+    
+}

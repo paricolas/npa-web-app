@@ -1,0 +1,16 @@
+@import '../../../stylesVar.scss';
+
+.footer-main{
+    display: flex;
+    padding:0.5em;
+    background: linear-gradient(145deg, darkred,grey, lightgrey);
+    color:grey;
+    justify-content: space-between;   
+    align-self: flex-end;
+    position: relative;
+    z-index: 10;
+    box-shadow: $default-box-shadow;
+    
+
+}
+ 

@@ -1,0 +1,16 @@
+//fonts
+$default-font-family : 'Georgia', 'Times New Roman', 'Times', 'serif';
+
+/*colors
+* defaults
+*/
+$default-font-color :black;
+$default-background:linear-gradient(145deg, lightgrey, white);
+$default-box-shadow: 0px 0px 10px 2px black;
+$default-title-background:linear-gradient(145deg, black,grey, lightgrey);
+/* 
+* contextuals
+*/
+$validation-color:green;
+$cancelation-color:red;
+$hover-theme:linear-gradient(30deg, darkred,lightgrey 70%,white 90%)

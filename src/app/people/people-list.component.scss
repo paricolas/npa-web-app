@@ -1,0 +1,392 @@
+@import '../../stylesVar.scss';
+
+@media(min-width: 321px){
+.person-list-title{
+    max-width: 100%;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    margin:0;
+    text-align: center;
+    color:white;
+    background: $default-title-background;
+    box-shadow: $default-box-shadow;
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width:100%;
+    }
+}
+
+.add-person-form{
+    padding: 1em;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    }
+
+ .add-person-title{
+    padding:0.5em;
+    font-weight: bold;
+    }
+
+.person {
+    padding:0.5em;
+    word-wrap: break-word;
+    }
+.img-container{
+    display: flex;
+    width:1em;
+}
+.add{
+    height: 1em;
+    border-color: transparent; 
+    align-self: flex-end;      
+    }
+
+.person-list-window {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap; 
+    justify-content: center;
+    color:$default-font-color; 
+    margin:0;
+    bottom: 0;
+    overflow-y: auto;
+    height: 100%;
+        :hover{
+        background: $hover-theme;
+    }
+}
+
+
+.card{
+    display: flex;
+    padding: 1em;
+    flex-direction:column;
+    margin: 1em;
+    word-wrap: break-word;
+    width: 10em;
+    height: 10em;
+    border-radius: 0.5em;
+    box-shadow: $default-box-shadow;
+    background: $default-background;
+        :hover{
+        background: transparent;
+        }
+    }
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    :hover{
+        background: transparent;
+    }
+}
+
+.card-header-info{
+    font-weight: bold;
+    display: flex;
+    flex:9;
+    word-break: break-word;
+        :hover{
+        background: transparent;
+    }
+}
+
+.row-buttons{
+    align-self: flex-start;
+    flex:1;
+    width: 2em;
+    height: 2em;
+        :hover{
+        background: transparent;
+        }
+    }
+
+
+
+             
+.app-person-detail{
+    background: repeating-linear-gradient(75deg,darkgrey, white 0.1em,lightgrey 0.2em);         
+    box-shadow: $default-box-shadow;
+    display: flex;
+    padding:1em;
+    flex-direction: column;
+    width: 60%;
+    height: 40em;
+    align-self: center;
+    z-index: 5;
+    position: fixed;
+    bottom: 0;
+}
+
+ .person-detail-table{
+     flex-direction: column;
+     align-self: center;
+     background: $default-background;
+     display: flex;
+     align-self: center;
+     border-collapse: collapse;
+     width:100%;
+     padding-top:0.5em;
+     padding-bottom:0.5em;
+     box-shadow: $default-box-shadow;
+ }
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em;
+    
+}
+
+.info{
+    display: flex;
+    word-break: break-word;
+    flex:2;
+}
+ .input-box{
+     display:flex; 
+     flex:10;
+ }
+ .info-input{
+     display: flex;
+     word-break: break-word;
+     flex:8;
+     
+ }
+
+.team-button{
+    label{
+        font-weight: bold;
+        }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add{
+    height: 1em;
+    padding: 0.5em;
+    border-color: transparent;
+}
+
+.buttons{
+    padding:0 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+}
+
+@media(max-width: 320px){
+.person-list-title{
+    
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    margin:0;
+    text-align: center;
+    color:white;
+    background: $default-title-background;
+    box-shadow: $default-box-shadow;
+    
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width:100%;
+        font-size: medium;
+        padding: 0.5em;
+    }
+}
+
+.add-person-form{
+    padding: 0.5em;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: small;
+    flex:1;
+    }
+
+.search-box, .add-box{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+ .add-person-title{
+    padding:0.5em;
+    font-weight: bold;
+    }
+
+.person {
+    padding:0.5em;
+    word-wrap: break-word;
+    }
+.img-container{
+    display: flex;
+    width:1em;
+    align-self: center;
+}
+.add{
+    height: 1em;
+    border-color: transparent; 
+    align-self: flex-end;   
+       
+
+    }
+
+.person-list-window {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    color: black;
+    overflow-x: auto;
+    flex: 2;
+    width: 100%;
+    
+        :hover{
+        background: $hover-theme;
+    }
+}
+
+
+.card{
+    display: flex;
+    padding: 1em;
+    flex-direction:column;
+    margin: 1em;
+    word-wrap: break-word;
+    width: 10em;
+    height: 10em;
+    border-radius: 0.5em;
+    box-shadow: $default-box-shadow;
+    background: $default-background;
+    
+        :hover{
+        background: transparent;
+        }
+    }
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    :hover{
+        background: transparent;
+    }
+}
+
+.card-header-info{
+    font-weight: bold;
+    display: flex;
+    flex:9;
+    word-break: break-word;
+        :hover{
+        background: transparent;
+    }
+}
+
+.row-buttons{
+    align-self: flex-start;
+    flex:1;
+    width: 2em;
+    height: 2em;
+        :hover{
+        background: transparent;
+        }
+    }
+
+
+
+             
+.app-person-detail{
+    background: repeating-linear-gradient(75deg,darkgrey, white 0.1em,lightgrey 0.2em);         
+    box-shadow: $default-box-shadow;
+    display: flex;
+    padding:1em;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+    align-self: center;
+    z-index: 5;
+    position: fixed;
+    
+}
+
+ .person-detail-table{
+     flex-direction: column;
+     align-self: center;
+     background: $default-background;
+     display: flex;
+     align-self: center;
+     border-collapse: collapse;
+     width:100%;
+     padding-top:0.5em;
+     padding-bottom:0.5em;
+     box-shadow: $default-box-shadow;
+ }
+.row{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.5em;
+    
+}
+
+.info{
+    display: flex;
+    word-break: break-word;
+    flex:2;
+}
+ .input-box{
+     display:flex; 
+     flex:10;
+ }
+ .info-input{
+     display: flex;
+     word-break: break-word;
+     flex:8;
+     
+ }
+
+.team-button{
+    label{
+        font-weight: bold;
+        }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add{
+    height: 1em;
+    padding: 0.5em;
+    border-color: transparent;
+}
+
+.buttons{
+    padding:0 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+}

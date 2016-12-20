@@ -1,0 +1,126 @@
+@import '../../stylesVar.scss';
+@media(min-width: 321px){
+.main-window {
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    color: black;
+    margin:0;
+    }
+  
+.main-title{
+    background: $default-title-background;
+    margin:0;
+    text-align: center;
+    box-shadow: $default-box-shadow;
+    }
+
+.main-content{
+    display:flex;
+    margin:0;
+    text-align: center;
+    
+    }
+
+.main-list{
+    
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    padding:0.5em;
+    justify-content: flex-start;
+    align-content: space-between;
+
+    }
+
+.imageLink {
+    display: flex;
+    background: transparent;
+    flex-direction: column;
+    padding:0.5em;
+    :hover{
+    padding:0.5em;
+    background: $hover-theme;
+    }
+    }
+
+.imageLink img {
+    
+    width: 20em;
+    border-radius: 19em; 
+    box-shadow: $default-box-shadow;
+
+    }
+
+.imageLink label {
+    font-size: small;
+    margin:0.5em;
+    text-align: center;
+    }
+}
+
+    @media(max-width: 320px){
+.main-window {
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    color: white;
+    height: 100%;
+    margin:0;
+    }
+  
+.main-title{
+    background: $default-title-background;
+    margin:0;
+    text-align: center;
+    box-shadow: $default-box-shadow;
+    h1{
+        font-size: medium;
+        color: white;
+    }
+    }
+
+.main-content{
+    display:flex;
+    margin:0;
+    text-align: center;
+    height: 100%;
+    
+    }
+
+.main-list{
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    padding:0.5em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    }
+
+.imageLink {
+    display: flex;
+    background: transparent;
+    flex-direction: column;
+    padding:0.5em;
+    :hover{
+    padding:0.5em;
+    background: $hover-theme;
+    }
+    }
+
+.imageLink img {
+    
+    width: 10em;
+    border-radius: 19em; 
+    box-shadow: $default-box-shadow;
+
+    }
+
+.imageLink label {
+    font-size: small;
+    margin:0.5em;
+    text-align: center;
+    }
+}

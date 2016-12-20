@@ -1,0 +1,99 @@
+<div class="person-list-title">
+	<div class="back">
+		<button (click)="goBack()">Back</button>
+	</div>
+	<h1>Here is the people list !! ({{ peopleCounter }})</h1>
+</div>
+
+<div class="add-person-form">
+	<div class="search-box">
+		<label class="add-person-title">Search person</label>
+		<input class="person" [(ngModel)]="searchSubject" value="" placeholder="search person" (change)="searchPerson(searchSubject)">
+	</div>
+	<div class="add-box">
+		<label class="add-person-title">{{ addPersonTitle }}</label>
+		<input class="person" [(ngModel)]="firstname" value="" placeholder="firstname">
+		<input class="person" [(ngModel)]="surname" value="" placeholder="surname">
+		<div class="img-container">
+			<img class="add" [hidden]="!showAddButton()" src="../../assets/icons/plus.svg" (click)="addPerson(firstname,surname)">
+		</div>
+	</div>
+</div>
+
+
+<ul class="person-list-window" [@flyInOut]>
+
+	<li class="card" *ngFor="let person of people |async" (click)="selectPerson(person)" [@personState]="person.state">
+		<div class="card-header">
+			<div class="card-header-info">{{ person.firstname }} {{ person.surname }}</div>
+			<div class="row-buttons">
+				<img class="delete" src="../../assets/icons/delete.svg" (click)="deletePerson(person)" />
+			</div>
+		</div>
+
+		<div class="info">{{ person.position }}</div>
+		<div class="team">
+			<div class="t" *ngFor="let t of person.teams">
+				<label>{{ t }}</label>
+			</div>
+		</div>
+	</li>
+
+	<!-- Person's detail ***********************************************************************************-->
+
+</ul>
+
+<div class="app-person-detail" *ngIf="selectedPerson" [@flyUpDown]>
+
+	<span class="person-detail-table">
+				<div class="row">
+					<label class="info">Firstname: </label>
+					<div class="input-box">
+					<input class="info-input" type="text" required [(ngModel)]="selectedPerson.firstname" name="firstname" #firstname="ngModel" value="{{selectedPerson.firstname}}"
+						placeholder="{{selectedPerson.firstname}}">
+					<div [hidden]="firstname.valid|| firstname.pristine" class="alert-danger">Firstname is required</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="info" for="surname">Surname: </label>		
+					<div class="input-box">
+					<input class="info-input"type="text" required [(ngModel)]="selectedPerson.surname" name="surname" #surname="ngModel" value="{{selectedPerson.surname}}"
+						placeholder="{{selectedPerson.surname}}">
+					<div [hidden]="surname.valid|| surname.pristine" class="alert-danger">Surname is required</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="info">Position: </label>
+					<div class="input-box">
+					<input class="info-input" type="text" required [(ngModel)]="selectedPerson.position" name="position" #position="ngModel" value="{{selectedPerson.position}}"
+						placeholder="{{selectedPerson.position}}">
+				</div>
+				</div>
+		</span>
+
+	<form class="person-form">
+		<div class="team-button">
+			<label>Teams: </label>
+			<img class="add" src="../../assets/icons/plus.svg" (click)="toggleTeamForm(true)" />
+		</div>
+		<!-->work in progress-->
+		<div class="team">
+			<div class="t" *ngFor="let t of selectedPerson.teams">
+				<option type="text" [value]="t" placeholder="t">{{t}}</option>
+			</div>
+		</div>
+		<!-->team list-->
+	</form>
+	<div class="buttons">
+		<div class="save">
+			<button type="submit" [hidden]="!showSaveButton()" (click)="save(selectedPerson.$key, selectedPerson.firstname, selectedPerson.surname, selectedPerson.position, selectedPerson.team)">Save</button>
+		</div>
+		<div class="cancel">
+			<button (click)="unselectPerson()">Cancel</button>
+		</div>
+	</div>
+
+	<!-- EO Person's detail ***********************************************************************************-->
+</div>
+
+<!-- Exceptions **************************************************************************************************************-->
