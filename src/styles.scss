@@ -3,7 +3,7 @@
 /* You can add global styles to this file, and also import other style files */
 @media(min-width: 321px){
 html, body  {
-    display: flex;
+    
     margin:0;
     font-family: $default-font-family;
     background: repeating-linear-gradient(75deg,darkgrey, white 0.1em,lightgrey 0.2em);
@@ -12,10 +12,10 @@ html, body  {
     justify-content: space-between;
     height: 100%;
     z-index: -5;
-    -webkit-overflow-scrolling: touch;
+    
 }
 app-root{
-    display: flex;
+    
     justify-content: flex-start;
     overflow: auto;
     flex-direction: column;
@@ -104,16 +104,17 @@ border-radius: 2em;
 
 @media(max-width: 320px){
 html, body  {
-    display: flex;
+    position: absolute;
     margin:0;
     font-family: $default-font-family;
     background: repeating-linear-gradient(75deg,darkgrey, white 0.1em,lightgrey 0.2em);
     overflow-y: auto;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100%;
     z-index: -50;
     width: 100%;
+    display: flex;
 }
 app-root{
     display: flex;
@@ -125,21 +126,24 @@ app-root{
 }
 
  app-main{
-    
+    display: flex;
     justify-content: flex-start;
     flex-direction: column;
     display: flex;
-    height: 100%;
     width: 100%;
+    height:100%;
+    
 }
 
 app-people-list{
-    
+    display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    display: flex;
-    height: 100%;
     width: 100%;
+    height:100%;
+    
+    
+    
 }
 
 .back {

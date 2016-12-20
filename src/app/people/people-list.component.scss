@@ -112,9 +112,7 @@
         }
     }
 
-
-
-             
+            
 .app-person-detail{
     background: repeating-linear-gradient(75deg,darkgrey, white 0.1em,lightgrey 0.2em);         
     box-shadow: $default-box-shadow;
@@ -190,7 +188,7 @@
 
 @media(max-width: 320px){
 .person-list-title{
-    
+    max-width: 100%;
     position: relative;
     z-index: 5;
     display: flex;
@@ -200,14 +198,12 @@
     color:white;
     background: $default-title-background;
     box-shadow: $default-box-shadow;
-    
     h1 {
+        font-size:medium;
         display: flex;
         justify-content: center;
         align-self: center;
         width:100%;
-        font-size: medium;
-        padding: 0.5em;
     }
 }
 
@@ -217,18 +213,21 @@
     z-index: 5;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
     font-size: small;
-    flex:1;
-    }
-
-.search-box, .add-box{
-    display: flex;
-    width: 50%;
-    flex-direction: column;
     justify-content: flex-start;
-}
+    flex: 1;
+    
+    }
+    .search-box{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    .add-box{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
  .add-person-title{
     padding:0.5em;
     font-weight: bold;
@@ -240,15 +239,12 @@
     }
 .img-container{
     display: flex;
-    width:1em;
     align-self: center;
 }
 .add{
-    height: 1em;
+    width: 2em;
     border-color: transparent; 
-    align-self: flex-end;   
-       
-
+    align-self: flex-end;      
     }
 
 .person-list-window {
@@ -257,12 +253,13 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     color: black;
-    overflow-x: auto;
+    margin: 0;
+    bottom: 0;
+    overflow-y: auto;
     flex: 2;
-    width: 100%;
-    
+    padding: 0;
         :hover{
         background: $hover-theme;
     }
@@ -280,7 +277,6 @@
     border-radius: 0.5em;
     box-shadow: $default-box-shadow;
     background: $default-background;
-    
         :hover{
         background: transparent;
         }
@@ -315,21 +311,19 @@
         }
     }
 
-
-
-             
+     
 .app-person-detail{
     background: repeating-linear-gradient(75deg,darkgrey, white 0.1em,lightgrey 0.2em);         
     box-shadow: $default-box-shadow;
     display: flex;
     padding:1em;
     flex-direction: column;
-    width: 90%;
     height: 90%;
+    width: 90%;
     align-self: center;
     z-index: 5;
     position: fixed;
-    
+    bottom: 0;
 }
 
  .person-detail-table{
@@ -345,9 +339,10 @@
      box-shadow: $default-box-shadow;
  }
 .row{
+    font-size:small;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 0.5em;
     
 }
@@ -375,13 +370,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+        .add{
+        height: 1em;
+        padding: 0.5em;
+        border-color: transparent;
+    }
 }
 
-.add{
-    height: 1em;
-    padding: 0.5em;
-    border-color: transparent;
-}
+
 
 .buttons{
     padding:0 0 0 0;
