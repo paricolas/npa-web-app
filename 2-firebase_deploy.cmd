@@ -1,1 +1,1 @@
-firebase deploy
+cmd|firebase deploy

@@ -1,6 +1,6 @@
 @import '../../stylesVar.scss';
 
-@media(min-width: 321px){
+@media(min-width: 401px){
 .person-list-title{
     max-width: 100%;
     position: relative;
@@ -186,7 +186,7 @@
 }
 }
 
-@media(max-width: 320px){
+@media(max-width: 400px){
 .person-list-title{
     max-width: 100%;
     position: relative;
@@ -244,7 +244,8 @@
 .add{
     width: 2em;
     border-color: transparent; 
-    align-self: flex-end;      
+    align-self: flex-end; 
+    margin: 0.2em;     
     }
 
 .person-list-window {
@@ -254,6 +255,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     color: black;
     margin: 0;
     bottom: 0;
