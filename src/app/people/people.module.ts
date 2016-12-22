@@ -9,11 +9,9 @@ import { PeopleListComponent } from './people-list.component';
 
 @NgModule({
   declarations: [
-    
     PeopleListComponent,
-    
-    
   ],
+  
   imports: [
     CommonModule,
     FormsModule,

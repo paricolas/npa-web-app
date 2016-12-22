@@ -6,6 +6,7 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 
 import { Person } from '../person/person.model';
 import { PersonService } from '../person/person.service';
+import { LoginService } from '../shared/login/login.service';
 import { TeamService } from '../team/team.service';
 
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +16,7 @@ import { Observable } from 'rxjs/Observable';
     templateUrl: './people-list.component.html',
     styleUrls: ['./people-list.component.scss'],
     providers: [
-        [PersonService, TeamService],
+        [PersonService, TeamService, LoginService],
     ],
 
     animations: [
@@ -67,10 +68,11 @@ export class PeopleListComponent implements OnInit {
     searchSubject: string;
     mySubject: string;
     loading: boolean;
+    
 
 
     constructor(
-
+        private loginService:LoginService,
         private teamService: TeamService,
         private personService: PersonService,
         private route: ActivatedRoute,
@@ -85,6 +87,7 @@ export class PeopleListComponent implements OnInit {
         this.addTeamBoolean = false;
         this.searchSubject = "";
         this.loading = false;
+        
     };
 
 
@@ -110,6 +113,7 @@ export class PeopleListComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loginService.getConnectionStatus();
         this.getPeople();
         this.getCount();
         // this.getTeams();

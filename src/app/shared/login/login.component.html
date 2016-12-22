@@ -1,0 +1,11 @@
+<div class="login-panel" *ngIf="showLoginButton()" [@display]>
+  <input [(ngModel)]="email" value="" placeholder="email" type="email">
+  <input [(ngModel)]="password" value="" placeholder="password" type="password">
+  <div class="login-confirm">
+  <img class="go" [hidden]="!showGoButton()" src="../../assets/icons/go.svg" (click)="login()"[@display]>
+  </div>
+</div>
+
+<div>
+  <img *ngIf="!showLoginButton()" class="exit" src="../../assets/icons/exit.png" (click)="logout()"[@display]>
+</div>

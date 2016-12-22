@@ -9,15 +9,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { LoginComponent } from './shared/login/login.component';
 
-//fnctional modules
+
+//functional modules
 import { PeopleModule } from './people/people.module';
+
 
 
 // angular firebase
 import { AngularFireModule } from 'angularfire2';
 import * as firebase from 'firebase';
-import { TestComponent } from './test/test.component';
+import { ConnectComponent } from './connect/connect.component';
+
 
 // Must export the config
 export const firebaseConfig = {
@@ -27,17 +31,18 @@ export const firebaseConfig = {
     storageBucket: "npa-web-app-68818.appspot.com",
 };
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    TestComponent,
-
-
+    ConnectComponent,
+    LoginComponent,
 
   ],
+  
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
@@ -45,8 +50,8 @@ export const firebaseConfig = {
     HttpModule,
     AppRoutingModule,
     PeopleModule,
-
-
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
