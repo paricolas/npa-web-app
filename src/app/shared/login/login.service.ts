@@ -1,31 +1,31 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Injectable()
 export class LoginService {
-  isConnected: boolean
   af: AngularFire;
   user = {};
+  @Input() isConnected: boolean;
 
   constructor(
     af: AngularFire,
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
-    
+
   ) {
     this.af = af;
-    // this.isConnected =true;
+
   }
 
-  getConnectionStatus() {
+  getConnectionStatus(): boolean {
     this.af.auth.subscribe(user => {
-      if(user) {
+      if (user) {
         // user logged in
         this.isConnected = true;
-        
+        this.getRedirection();
       }
       else {
         // user not logged in
@@ -33,11 +33,11 @@ export class LoginService {
         this.getRedirection();
       }
     });
-    
+    return this.isConnected;
   }
 
-  login(email, password) {
-    this.af.auth.login({
+  getLogedIn(email, password) {
+    return this.af.auth.login({
       email: email,
       password: password,
     },
@@ -45,25 +45,32 @@ export class LoginService {
         provider: AuthProviders.Password,
         method: AuthMethods.Password,
       });
+
+
+
+  }
+
+  login(email, password) {
+    return this.getLogedIn(email, password),
     this.getConnectionStatus();
-    this.getRedirection();
-    
   }
 
   logout() {
     this.af.auth.logout();
     this.getConnectionStatus();
-    
+
   }
   getRedirection() {
-    if (this.isConnected == true){
-      this.router.navigate(['/main']);
+    if (this.isConnected == true) {
+      if (this.router.url == '/connect') {
+        this.router.navigate(['/main']);
+      }
     }
-    else{
+    else {
       // clears browser history so they can't navigate with back button
-    this.location.replaceState('/'); 
-    this.router.navigate(['/connect']);
+      this.location.replaceState('/');
+      this.router.navigate(['/connect']);
     }
-    
+
   }
 }

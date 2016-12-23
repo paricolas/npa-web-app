@@ -20,9 +20,7 @@ import { Location } from '@angular/common';
         style({ width: 10, transform: 'translateX(0)', opacity: 0 }),
         animate(300)
       ]),
-      transition('* => void', [
-        animate(300, style({ transform: 'translateY(100%)' }))
-      ])
+
     ])]
 })
 @Injectable()
