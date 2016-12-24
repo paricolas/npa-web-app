@@ -1,4 +1,3 @@
-cd c:/perso/github/npa-web-app
 git status
 git add * 
 set /p newComment=""
